@@ -5,8 +5,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CpanelComponent } from './cpanel.component';
+import { LoginComponent } from '../auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SalesComponent } from './sales/sales.component';
 import { AccountsPayableComponent } from './accounts-payable/accounts-payable.component';
@@ -26,7 +28,8 @@ import { SettingsComponent } from './settings/settings.component';
     ReportsComponent,
     CustomersComponent,
     SuppliersComponent,
-    SettingsComponent
+    SettingsComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +37,8 @@ import { SettingsComponent } from './settings/settings.component';
     ModalModule.forRoot(),
     ToastrModule.forRoot(),
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CpanelModule { }
