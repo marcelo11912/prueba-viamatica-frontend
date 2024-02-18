@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { UsuarioDetallesService } from '../detalle-usuario/service/usuario-detalles.service';
 import { UsuariosService } from './service/usuarios.service';
 import { ToastrService } from 'ngx-toastr';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ModalServiceService } from './service/modal-service.service';
 
 @Component({
   selector: 'app-usuarios',
@@ -22,6 +23,7 @@ export class UsuariosComponent {
     private detallesUsuarioService: UsuarioDetallesService,
     private usuarioService: UsuariosService,
     private toastr: ToastrService,
+    private modalService: ModalServiceService
   ) { }
 
   ngOnInit(): void {
@@ -33,23 +35,28 @@ export class UsuariosComponent {
       this.listaDetallesUsuario = data
     });
   }
-
+ 
   public actualizarUsuario() {
-    this.usuarioService.actualizar("", this.nombre, this.apellido, this.fechaCumple, this.estado).subscribe(
+    this.usuarioService.actualizar(this.idUsuario , this.nombre, this.apellido, this.fechaCumple, this.estado).subscribe(
       data => {
-        this.toastr.success('Se actualizo con exito', 'Actualizar');
+        this.toastr.success('Se actualizo con exito', 'Actualizar')
+        this.mostrarUsuariosDetalles();
       }, error => {
         console.log(error)
         this.toastr.error('Error al actualizar', 'Actualizar');
       });
   }
 
-  public modalEditar(datos: any) {
-    this.idUsuario = datos.id_usuario;
+  openModal(template: TemplateRef<any>, datos: any) {
+    this.idUsuario = datos.idUsuario;
     this.nombre = datos.name;
-    this.apellido = datos.id_categoria;
-    this.fechaCumple = datos.id_categoria;
-    this.estado = datos.id_categoria;
+    this.apellido = datos.lastName;
+    this.fechaCumple = datos.birthDate;
+    this.estado = datos.status;
+    this.modalService.openModal(template);
   }
 
+  closeModal() {
+    this.modalService.closeModal();
+  }
 }

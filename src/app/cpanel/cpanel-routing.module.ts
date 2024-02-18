@@ -7,6 +7,7 @@ import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.compo
 import { UsuarioIntentosFaComponent } from './usuario-intentos-fa/usuario-intentos-fa.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { CargaMasivaComponent } from './carga-masiva/carga-masiva.component';
+import { ValidarRolesGuard } from '../validar-roles.guard'; 
 
 const routes: Routes = [
   { 
@@ -19,7 +20,7 @@ const routes: Routes = [
   { 
     path: 'dashboard', component: CpanelComponent,
     children: [
-      { path: 'detalles-usuarios', component: DetalleUsuarioComponent },
+      { path: 'detalles-usuarios', component: DetalleUsuarioComponent, canActivate: [ValidarRolesGuard] },
       { path: 'intentos-fallidos', component: UsuarioIntentosFaComponent },
     ]
   },

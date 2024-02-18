@@ -23,7 +23,7 @@
             </li>
 
             <li id="sales-item" class="sidebar-item">
-                <a class="sidebar-link" href="dashboard/detalles-usuarios">
+                <a class="sidebar-link" href="dashboard/detalles-usuarios" *ngIf="!validarRol">
                     <i class="fas fa-info-circle"></i>
                     <span class="align-middle">Detalles Usuarios</span>
                 </a>
