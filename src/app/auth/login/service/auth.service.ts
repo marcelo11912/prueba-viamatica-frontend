@@ -13,8 +13,6 @@ export class AuthService {
   constructor(private http: HttpClient ,private router: Router) { }
 
   iniciarSesion(usuario: string, clave: string) {
-    var formData = new FormData();
-
     const body = {
       emailOrUsuario: usuario,
       contrasena: clave
@@ -41,10 +39,12 @@ export class AuthService {
     return this.token;
   }
 
-  logout() {
-    this.token = null;
-    localStorage.removeItem('token');
-    localStorage.removeItem('session');
-    this.router.navigate(['/login']);
+  logout(idUsuario: number ) {
+    const body = {
+      idUsuario: idUsuario
+    };
+
+    return this.http.post<any>(`/api/usuario/logout`, body)
+   
   }
 }

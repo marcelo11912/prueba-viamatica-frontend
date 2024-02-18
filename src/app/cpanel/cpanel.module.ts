@@ -6,30 +6,25 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 import { CpanelComponent } from './cpanel.component';
 import { LoginComponent } from '../auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SalesComponent } from './sales/sales.component';
-import { AccountsPayableComponent } from './accounts-payable/accounts-payable.component';
-import { AccountsReceivableComponent } from './accounts-receivable/accounts-receivable.component';
-import { ReportsComponent } from './reports/reports.component';
-import { CustomersComponent } from './customers/customers.component';
-import { SuppliersComponent } from './suppliers/suppliers.component';
-import { SettingsComponent } from './settings/settings.component';
+import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
+import { UsuarioIntentosFaComponent } from './usuario-intentos-fa/usuario-intentos-fa.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { CargaMasivaComponent } from './carga-masiva/carga-masiva.component';
 
 @NgModule({
   declarations: [
     CpanelComponent,
     DashboardComponent,
-    SalesComponent,
-    AccountsPayableComponent,
-    AccountsReceivableComponent,
-    ReportsComponent,
-    CustomersComponent,
-    SuppliersComponent,
-    SettingsComponent,
-    LoginComponent
+    LoginComponent,
+    DetalleUsuarioComponent,
+    UsuarioIntentosFaComponent,
+    UsuariosComponent,
+    CargaMasivaComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +33,7 @@ import { SettingsComponent } from './settings/settings.component';
     ToastrModule.forRoot(),
     SharedModule,
     FormsModule,
+    DatePipe,
     ReactiveFormsModule
   ]
 })

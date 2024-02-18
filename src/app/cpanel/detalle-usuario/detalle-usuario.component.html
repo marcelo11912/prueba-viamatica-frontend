@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row mb-2">
+            <div class="col-md-11">
+                <h5>INDICADORES DE USUARIOS</h5>
+            </div>
+        </div>
+
+        <!--Informacion de la factura -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Sesion</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let detalleUsuario of listaDetallesUsuario">
+                        <td>{{ detalleUsuario.idUsuario }}</td>
+                        <td>{{ detalleUsuario.userName }}</td>
+                        <td>{{ detalleUsuario.mail }}</td>
+                        <td>{{ detalleUsuario.sessionActive }}</td>
+                        <td>{{ detalleUsuario.status }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>

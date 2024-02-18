@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row mb-2">
+            <div class="col-md-11">
+                <h5>USUARIOS</h5>
+            </div>
+        </div>
+
+        <!--Informacion de la factura -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Cumpleaños</th>
+                        <th>Estado</th>
+                        <th>Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let detalleUsuario of listaDetallesUsuario">
+                        <td>{{ detalleUsuario.name }}</td>
+                        <td>{{ detalleUsuario.lastName }}</td>
+                        <td>{{ detalleUsuario.birthDate }}</td>
+                        <td>{{ detalleUsuario.status }}</td>
+                        <button type="button" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit" title="Carga masiva"></i>
+                        </button>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+
+
+</div>

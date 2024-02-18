@@ -3,13 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CpanelComponent } from './cpanel.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SalesComponent } from './sales/sales.component';
-import { AccountsPayableComponent } from './accounts-payable/accounts-payable.component';
-import { AccountsReceivableComponent } from './accounts-receivable/accounts-receivable.component';
-import { ReportsComponent } from './reports/reports.component';
-import { CustomersComponent } from './customers/customers.component';
-import { SuppliersComponent } from './suppliers/suppliers.component';
-import { SettingsComponent } from './settings/settings.component';
+import { DetalleUsuarioComponent } from './detalle-usuario/detalle-usuario.component';
+import { UsuarioIntentosFaComponent } from './usuario-intentos-fa/usuario-intentos-fa.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { CargaMasivaComponent } from './carga-masiva/carga-masiva.component';
 
 const routes: Routes = [
   { 
@@ -20,21 +17,18 @@ const routes: Routes = [
   },
 
   { 
-    path: 'mi_negocio', component: CpanelComponent,
+    path: 'dashboard', component: CpanelComponent,
     children: [
-      { path: 'ventas', component: SalesComponent },
-      { path: 'cuentas_por_pagar', component: AccountsPayableComponent },
-      { path: 'cuentas_por_cobrar', component: AccountsReceivableComponent },
-      { path: 'reportes', component: ReportsComponent },
-      { path: 'clientes', component: CustomersComponent },
-      { path: 'proovedores', component: SuppliersComponent }
+      { path: 'detalles-usuarios', component: DetalleUsuarioComponent },
+      { path: 'intentos-fallidos', component: UsuarioIntentosFaComponent },
     ]
   },
 
   {
-    path: 'sistema', component: CpanelComponent,
+    path: 'mantenimiento', component: CpanelComponent,
     children: [
-      { path: 'configuraciones', component: SettingsComponent }
+      { path: 'usuarios', component: UsuariosComponent },
+      { path: 'carga-masiva', component: CargaMasivaComponent },
     ]
   }
 ];

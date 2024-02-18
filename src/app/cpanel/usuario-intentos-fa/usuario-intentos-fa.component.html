@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row mb-2">
+            <div class="col-md-11">
+                <h5>INDICADORES DE USUARIOS DE INTENTOS FALLIDOS</h5>
+            </div>
+        </div>
+
+        <!--Informacion de la factura -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Usuario</th>
+                        <th># Intentos Fallidos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let detalleUsuario of listaDetallesUsuario">
+                        <td>{{ detalleUsuario.idUsuario }}</td>
+                        <td>{{ detalleUsuario.userName }}</td>
+                        <td>{{ detalleUsuario.intentosFallidos }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
